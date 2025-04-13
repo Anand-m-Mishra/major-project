@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dermascan</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="d1.css" />
+</head>
+<body>
+  <div class="cyber-grid"></div>
+  
+  <header>
+    <div class="logo">
+      <span class="logo-highlight">DERMA</span>SCAN
+      <div class="logo-pulse"></div>
+    </div>
+    <nav>
+      <a href="#" class="nav-link active" data-route="home">
+        <span class="nav-icon"><i class="fas fa-home"></i></span>
+        <span class="nav-text">Home</span>
+      </a>
+      <a href="#" class="nav-link" data-route="results">
+        <span class="nav-icon"><i class="fas fa-chart-line"></i></span>
+        <span class="nav-text">Results</span>
+      </a>
+      <a href="#" class="nav-link" data-route="history">
+        <span class="nav-icon"><i class="fas fa-history"></i></span>
+        <span class="nav-text">History</span>
+      </a>
+    </nav>
+    <div class="header-glitch"></div>
+  </header>
+
+  <main id="app">
+    <!-- Home Section -->
+    <section class="hero" data-route="home">
+      <h1>
+        <span class="glitch" data-text="DISCOVER YOUR SKIN HEALTH">DISCOVER YOUR SKIN HEALTH</span>
+        <br>
+        <span class="highlight">WITH AI-POWERED CANCER INSIGHTS</span>
+      </h1>
+      <p class="futuristic-text">Our neural networks analyze dermatological patterns with 99.7% accuracy. Upload your scan for instant diagnostic predictions.</p>
+      <div class="tech-stats">
+        <div class="stat">
+          <div class="stat-value" data-count="99.7">0</div>
+          <div class="stat-label">Accuracy</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" data-count="1.2">0</div>
+          <div class="stat-label">Seconds Analysis</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" data-count="50000">0</div>
+          <div class="stat-label">Cases Processed</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section class="upload" data-route="home">
+      <div class="upload-box" id="drop-area">
+        <div class="scan-animation">
+          <div class="laser"></div>
+          <div class="scan-line"></div>
+        </div>
+        <h2><span class="text-flicker">IMAGE UPLOAD</span></h2>
+        <p>Drag and drop dermatological images for instant AI analysis</p>
+        <div class="or-divider">
+          <div class="line"></div>
+          <span>OR</span>
+          <div class="line"></div>
+        </div>
+        <label for="fileInput" class="browse">
+          <span class="btn-hover-effect">BROWSE FILES</span>
+          <div class="btn-underline"></div>
+        </label>
+        <input type="file" id="fileInput" accept="image/*" hidden />
+      </div>
+      <button class="upload-btn">
+        <span>INITIATE SCAN</span>
+        <div class="btn-pulse"></div>
+      </button>
+    </section>
+
+    <!-- Results Section (hidden by default) -->
+    <section class="results" data-route="results" style="display:none;">
+      <div class="results-header">
+        <h2><span class="glitch" data-text="DIAGNOSTIC RESULTS">DIAGNOSTIC RESULTS</span></h2>
+        <div class="result-id">CASE ID: <span>DS-2023-08-25-42X7</span></div>
+      </div>
+      
+      <div class="result-container">
+        <div class="result-image">
+          <div class="image-placeholder"></div>
+          <div class="analysis-points">
+            <div class="point" style="top:30%; left:25%;" data-detail="Irregular border detected"></div>
+            <div class="point" style="top:45%; left:60%;" data-detail="Color variation"></div>
+            <div class="point" style="top:70%; left:40%;" data-detail="Asymmetry detected"></div>
+          </div>
+        </div>
+        
+        <div class="result-details">
+          <div class="diagnosis-card">
+            <h3>AI DIAGNOSIS</h3>
+            <div class="diagnosis-result">
+              <span class="severity high">HIGH RISK</span>
+              <div class="confidence">
+                <div class="confidence-bar" style="width: 87%;"></div>
+                <span>87% CONFIDENCE</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="recommendation-card">
+            <h3>RECOMMENDATION</h3>
+            <ul>
+              <li>Consult dermatologist within 7 days</li>
+              <li>Monitor for changes in size/color</li>
+              <li>Possible biopsy recommended</li>
+            </ul>
+          </div>
+          
+          <div class="stats-card">
+            <h3>ANALYTICS</h3>
+            <div class="stat-row">
+              <span>Asymmetry</span>
+              <div class="stat-bar">
+                <div class="stat-fill" style="width: 78%;"></div>
+              </div>
+              <span>78%</span>
+            </div>
+            <div class="stat-row">
+              <span>Border</span>
+              <div class="stat-bar">
+                <div class="stat-fill" style="width: 85%;"></div>
+              </div>
+              <span>85%</span>
+            </div>
+            <div class="stat-row">
+              <span>Color</span>
+              <div class="stat-bar">
+                <div class="stat-fill" style="width: 92%;"></div>
+              </div>
+              <span>92%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="action-buttons">
+        <button class="secondary-btn">SAVE REPORT</button>
+        <button class="primary-btn">FIND SPECIALIST</button>
+      </div>
+    </section>
+
+    <!-- History Section (hidden by default) -->
+    <section class="history" data-route="history" style="display:none;">
+      <h2><span class="glitch" data-text="SCAN HISTORY">SCAN HISTORY</span></h2>
+      
+      <div class="history-filters">
+        <div class="filter-group">
+          <label>DATE RANGE</label>
+          <select class="futuristic-select">
+            <option>LAST 30 DAYS</option>
+            <option>LAST 6 MONTHS</option>
+            <option>LAST YEAR</option>
+            <option>ALL TIME</option>
+          </select>
+        </div>
+        
+        <div class="filter-group">
+          <label>SEVERITY</label>
+          <select class="futuristic-select">
+            <option>ALL</option>
+            <option>HIGH RISK</option>
+            <option>MODERATE</option>
+            <option>LOW RISK</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="history-grid">
+        <div class="history-card">
+          <div class="card-header">
+            <span class="case-id">DS-2023-08-20-39B2</span>
+            <span class="severity high">HIGH RISK</span>
+          </div>
+          <div class="card-date">AUG 20, 2023</div>
+          <div class="card-preview"></div>
+          <div class="card-confidence">
+            <div class="confidence-bar" style="width: 87%;"></div>
+            <span>87% CONFIDENCE</span>
+          </div>
+        </div>
+        
+        <div class="history-card">
+          <div class="card-header">
+            <span class="case-id">DS-2023-07-15-28R5</span>
+            <span class="severity moderate">MODERATE</span>
+          </div>
+          <div class="card-date">JUL 15, 2023</div>
+          <div class="card-preview"></div>
+          <div class="card-confidence">
+            <div class="confidence-bar" style="width: 64%;"></div>
+            <span>64% CONFIDENCE</span>
+          </div>
+        </div>
+        
+        <div class="history-card">
+          <div class="card-header">
+            <span class="case-id">DS-2023-06-02-17S9</span>
+            <span class="severity low">LOW RISK</span>
+          </div>
+          <div class="card-date">JUN 02, 2023</div>
+          <div class="card-preview"></div>
+          <div class="card-confidence">
+            <div class="confidence-bar" style="width: 32%;"></div>
+            <span>32% CONFIDENCE</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="newsletter">
+      <p class="futuristic-text">SUBSCRIBE TO OUR NEURAL NETWORK UPDATES</p>
+      <div class="email-box">
+        <input type="email" placeholder="YOUR_EMAIL@DOMAIN.COM" />
+        <button>
+          <span>SUBSCRIBE</span>
+          <div class="btn-trail"></div>
+        </button>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="logo-footer">
+        <span>DERMA</span>SCAN<span class="tm">™</span>
+        <div class="footer-pulse"></div>
+      </div>
+      
+      <div class="links">
+        <div class="link-column">
+          <h4>PRODUCT</h4>
+          <a href="#">Pricing</a>
+          <a href="#">Features</a>
+          <a href="#">API</a>
+        </div>
+        <div class="link-column">
+          <h4>COMPANY</h4>
+          <a href="#">About</a>
+          <a href="#">Careers</a>
+          <a href="#">Research</a>
+        </div>
+        <div class="link-column">
+          <h4>RESOURCES</h4>
+          <a href="#">Help</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy</a>
+        </div>
+      </div>
+      
+      <div class="social">
+        <h4>CONNECT</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="bottom-note">
+      <p>© 2023 <span class="highlight">DERMA</span>SCAN SYSTEMS • ALL RIGHTS RESERVED • v4.2.1</p>
+      <div class="cyber-line"></div>
+    </div>
+  </footer>
+
+  <script src="d1.js"></script>
+</body>
+</html>

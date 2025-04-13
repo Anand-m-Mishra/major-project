@@ -1,0 +1,8 @@
+Flask==2.3.2
+python-dotenv==1.0.0
+numpy==1.24.3
+scikit-learn==1.3.0  # For .pkl model
+Pillow==9.5.0
+gunicorn==20.1.0
+joblib==1.3.2  # For loading .pkl file
+opencv-python==4.8.0.76  # For image processing
