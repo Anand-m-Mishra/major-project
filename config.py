@@ -13,6 +13,6 @@ class Config:
     MAX_CONTENT_LENGTH = 16 * 1024 * 1024  # 16MB max upload size
     
     # Model configuration
-    MODEL_PATH = os.path.join(basedir, 'app', 'models', 'model.pkl')
-    CLASS_NAMES = ['akiec', 'bcc', 'bkl', 'df', 'mel', 'nv', 'vasc']  # Example skin lesion classes
-    IMAGE_SIZE = (224, 224)  # Adjust based on your model's expected input size
+    MODEL_PATH = os.path.join(basedir, 'app', 'models', 'SequentialCNN_DualLayer2_model_66.keras')
+    CLASS_NAMES = ['Melanocytic nevi', 'Melanoma', 'Benign keratosis-like lesions', 'Basal cell carcinoma', 'Actinic keratoses', 'Vascular lesions', 'Dermatofibroma', "Normal skin"]  # Example skin lesion classes
+    IMAGE_SIZE = (200, 150)  # Adjust based on your model's expected input size
