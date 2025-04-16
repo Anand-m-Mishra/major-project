@@ -3,5 +3,11 @@ python-dotenv==1.0.0
 numpy==1.24.3
 tensorflow==2.12.0  # Or the version you used to train your model
 Pillow==9.5.0
+<<<<<<< HEAD
 opencv-python==4.8.0.76
 gunicorn==20.1.0  # For production deployment
+=======
+gunicorn==20.1.0
+joblib==1.3.2  # For loading .pkl file
+opencv-python==4.8.0.76  # For image processing
+>>>>>>> cfa8a89c7b07f87e1f3ff18a437758336b64ef62
