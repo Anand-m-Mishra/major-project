@@ -1,4 +1,40 @@
 // Replace your existing upload functionality with this:
+function setupNavigation() {
+  const navLinks = document.querySelectorAll('.nav-link');
+  const routeSections = document.querySelectorAll('section[data-route]');
+  
+  // Handle navigation clicks
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const route = this.getAttribute('data-route');
+      
+      // Update active nav link
+      navLinks.forEach(navLink => navLink.classList.remove('active'));
+      this.classList.add('active');
+      
+      // Show the selected route
+      routeSections.forEach(section => {
+        section.style.display = section.getAttribute('data-route') === route ? 'block' : 'none';
+      });
+      
+      // Special handling for results page
+      if (route === 'results') {
+        // You might want to load results data here
+      }
+      
+      // Scroll to top
+      window.scrollTo(0, 0);
+    });
+  });
+  
+  // Initialize with home page
+  document.querySelector('[data-route="home"]').style.display = 'block';
+}
+
+// Initialize navigation when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  setupNavigation();
 
 document.addEventListener('DOMContentLoaded', function() {
   const dropArea = document.getElementById('drop-area');
@@ -351,3 +387,5 @@ function displayResults(data) {
   console.log('Upload successful:', data);
   // Navigate to results page or update UI
 }
+
+});
